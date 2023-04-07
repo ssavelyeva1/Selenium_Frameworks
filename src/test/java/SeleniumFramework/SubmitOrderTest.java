@@ -13,6 +13,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import SeleniumFramework.pageobjects.LandingPage;
+import SeleniumFramework.pageobjects.ProductCatalog;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class SubmitOrderTest {
@@ -25,12 +26,11 @@ public class SubmitOrderTest {
 		driver.manage().window().maximize();
 
 		LandingPage landingPage = new LandingPage(driver);
-		
 		landingPage.goTo("https://rahulshettyacademy.com/client");
 		landingPage.loginApplication("savelyeva1.20@gmail.com", "Abc_12345");
-
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".mb-3")));
+		
+		ProductCatalog productCatalog = new ProductCatalog(driver);
+		List<WebElement> products = productCatalog.getProductList();
 
 		// finding Zara coat product and adding it to the cart
 		String productName = "ZARA COAT 3";
