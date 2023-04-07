@@ -12,6 +12,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import SeleniumFramework.pageobjects.LandingPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class StandaloneTest {
@@ -23,6 +24,8 @@ public class StandaloneTest {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.manage().window().maximize();
 
+		LandingPage landingPage = new LandingPage(driver);
+		
 		driver.get("https://rahulshettyacademy.com/client");
 
 		driver.findElement(By.id("userEmail")).sendKeys("savelyeva1.20@gmail.com");
