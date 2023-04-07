@@ -20,6 +20,8 @@ public class SubmitOrderTest {
 
 	public static void main(String[] args) {
 
+		String productName = "ZARA COAT 3";
+		
 		WebDriverManager.chromedriver().setup();
 		WebDriver driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
@@ -31,20 +33,9 @@ public class SubmitOrderTest {
 		
 		ProductCatalog productCatalog = new ProductCatalog(driver);
 		List<WebElement> products = productCatalog.getProductList();
+		productCatalog.addProductToCart(productName);
 
-		// finding Zara coat product and adding it to the cart
-		String productName = "ZARA COAT 3";
-		List<WebElement> productsList = driver.findElements(By.cssSelector(".mb-3"));
-		WebElement coatProduct = productsList.stream()
-				.filter(product -> product.findElement(By.cssSelector("b")).getText().equals(productName)).findFirst()
-				.orElse(null);
-
-		coatProduct.findElement(By.cssSelector(".card-body button:last-of-type")).click();
-
-		// waiting till popup after adding the item to the cart appears
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#toast-container")));
-		wait.until(ExpectedConditions.invisibilityOf(driver.findElement(By.cssSelector(".ng-animating"))));
-		wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("[routerlink*='cart']"))).click();
+		//wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("[routerlink*='cart']"))).click();
 
 		// making sure the item was added to the cart
 		List<WebElement> cartProducts = driver.findElements(By.cssSelector(".cartSection h3"));
@@ -58,7 +49,7 @@ public class SubmitOrderTest {
 		Actions a = new Actions(driver);
 		a.sendKeys(driver.findElement(By.cssSelector("[placeholder='Select Country']")), "india").build().perform();
 
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".ta-results")));
+		//wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".ta-results")));
 		driver.findElement(By.xpath("//button[contains(@class,'ta-item')][2]")).click();
 		driver.findElement(By.cssSelector(".action__submit")).click();
 
