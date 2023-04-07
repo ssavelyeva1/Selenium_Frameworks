@@ -25,5 +25,15 @@ public class LandingPage {
 	
 	@FindBy(id = "login")
 	WebElement submit;
+	
+	public void goTo(String url) {
+		driver.get(url);
+	}
+	
+	public void loginApplication(String email, String psswd) {
+		userEmail.sendKeys(email);
+		password.sendKeys(psswd);
+		submit.click();
+	}
 
 }
