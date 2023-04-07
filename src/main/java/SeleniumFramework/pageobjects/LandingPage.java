@@ -35,10 +35,13 @@ public class LandingPage extends AbstractComponent {
 		driver.get(url);
 	}
 	
-	public void loginApplication(String email, String psswd) {
+	public ProductCatalog loginApplication(String email, String psswd) {
 		userEmail.sendKeys(email);
 		password.sendKeys(psswd);
 		submit.click();
+		
+		ProductCatalog productCatalog = new ProductCatalog(driver);
+		return productCatalog;
 	}
 
 }
