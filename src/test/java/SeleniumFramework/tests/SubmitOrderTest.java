@@ -28,8 +28,7 @@ public class SubmitOrderTest extends BaseTest {
 	public void submitOrder() throws IOException {
 		String productName = "ZARA COAT 3";
 
-		LandingPage landingPage = launchApplication();
-
+		// logging to the web site
 		ProductCatalog productCatalog = landingPage.loginApplication("savelyeva1.20@gmail.com", "Abc_12345");
 
 		// finding and adding product to the cart
@@ -49,9 +48,6 @@ public class SubmitOrderTest extends BaseTest {
 		// asserting confirmation message
 		String confirmMessage = confirmationPage.getConfirmationMessage();
 		Assert.assertTrue(confirmMessage.equalsIgnoreCase("THANKYOU FOR THE ORDER."));
-
-		driver.close();
-
 	}
 
 }

@@ -8,6 +8,8 @@ import java.util.Properties;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 
 import SeleniumFramework.pageobjects.LandingPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -15,6 +17,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class BaseTest {
 
 	public WebDriver driver;
+	public LandingPage landingPage;
 
 	public WebDriver initializeDriver() throws IOException {
 		// using properties class to extract values from GlobalData properties file
@@ -40,14 +43,20 @@ public class BaseTest {
 		return driver;
 	}
 	
+	@BeforeMethod
 	public LandingPage launchApplication() throws IOException {
 		driver = initializeDriver(); 
 		
 		// logging to the web site
-		LandingPage landingPage = new LandingPage(driver);
+		landingPage = new LandingPage(driver);
 		landingPage.goTo();
 		
 		return landingPage;
+	}
+	
+	@AfterMethod
+	public void tearDown() {
+		driver.close();
 	}
 
 }
