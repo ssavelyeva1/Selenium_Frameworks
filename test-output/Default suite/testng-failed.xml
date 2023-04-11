@@ -5,9 +5,10 @@
     <classes>
       <class name="SeleniumFramework.tests.SubmitOrderTest">
         <methods>
+          <include name="OrderHistoryTest"/>
+          <include name="SubmitOrder"/>
           <include name="launchApplication"/>
           <include name="tearDown"/>
-          <include name="submitOrder"/>
         </methods>
       </class> <!-- SeleniumFramework.tests.SubmitOrderTest -->
     </classes>

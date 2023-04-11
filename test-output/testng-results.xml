@@ -2,36 +2,36 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-04-11T16:15:24 CEST" name="Default suite" finished-at="2023-04-11T16:15:44 CEST" duration-ms="19609">
+  <suite started-at="2023-04-11T17:58:42 CEST" name="Default suite" finished-at="2023-04-11T17:59:16 CEST" duration-ms="33933">
     <groups>
     </groups>
-    <test started-at="2023-04-11T16:15:24 CEST" name="Default test" finished-at="2023-04-11T16:15:44 CEST" duration-ms="19609">
-      <class name="SeleniumFramework.tests.ErrorValidations">
-        <test-method is-config="true" signature="launchApplication()[pri:0, instance:SeleniumFramework.tests.ErrorValidations@73e9cf30]" started-at="2023-04-11T16:15:24 CEST" name="launchApplication" finished-at="2023-04-11T16:15:33 CEST" duration-ms="9076" status="PASS">
+    <test started-at="2023-04-11T17:58:42 CEST" name="Default test" finished-at="2023-04-11T17:59:16 CEST" duration-ms="33933">
+      <class name="SeleniumFramework.tests.SubmitOrderTest">
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:SeleniumFramework.tests.SubmitOrderTest@2d52216b]" started-at="2023-04-11T17:58:42 CEST" name="launchApplication" finished-at="2023-04-11T17:58:50 CEST" duration-ms="8059" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApplication -->
-        <test-method signature="LoginErrorValidation()[pri:0, instance:SeleniumFramework.tests.ErrorValidations@73e9cf30]" started-at="2023-04-11T16:15:33 CEST" name="LoginErrorValidation" finished-at="2023-04-11T16:15:34 CEST" duration-ms="660" status="PASS">
+        <test-method signature="SubmitOrder()[pri:0, instance:SeleniumFramework.tests.SubmitOrderTest@2d52216b]" started-at="2023-04-11T17:58:50 CEST" name="SubmitOrder" finished-at="2023-04-11T17:59:07 CEST" duration-ms="17574" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- LoginErrorValidation -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:SeleniumFramework.tests.ErrorValidations@73e9cf30]" started-at="2023-04-11T16:15:34 CEST" name="tearDown" finished-at="2023-04-11T16:15:34 CEST" duration-ms="359" status="PASS">
+        </test-method> <!-- SubmitOrder -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:SeleniumFramework.tests.SubmitOrderTest@2d52216b]" started-at="2023-04-11T17:59:07 CEST" name="tearDown" finished-at="2023-04-11T17:59:08 CEST" duration-ms="251" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="launchApplication()[pri:0, instance:SeleniumFramework.tests.ErrorValidations@73e9cf30]" started-at="2023-04-11T16:15:34 CEST" name="launchApplication" finished-at="2023-04-11T16:15:41 CEST" duration-ms="6527" status="PASS">
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:SeleniumFramework.tests.SubmitOrderTest@2d52216b]" started-at="2023-04-11T17:59:08 CEST" name="launchApplication" finished-at="2023-04-11T17:59:15 CEST" duration-ms="6892" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApplication -->
-        <test-method signature="ProductErrorValifation()[pri:0, instance:SeleniumFramework.tests.ErrorValidations@73e9cf30]" started-at="2023-04-11T16:15:41 CEST" name="ProductErrorValifation" finished-at="2023-04-11T16:15:44 CEST" duration-ms="2712" status="PASS">
+        <test-method signature="OrderHistoryTest()[pri:0, instance:SeleniumFramework.tests.SubmitOrderTest@2d52216b]" started-at="2023-04-11T17:59:15 CEST" name="OrderHistoryTest" finished-at="2023-04-11T17:59:16 CEST" depends-on-methods="SeleniumFramework.tests.SubmitOrderTest.SubmitOrder" duration-ms="960" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ProductErrorValifation -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:SeleniumFramework.tests.ErrorValidations@73e9cf30]" started-at="2023-04-11T16:15:44 CEST" name="tearDown" finished-at="2023-04-11T16:15:44 CEST" duration-ms="200" status="PASS">
+        </test-method> <!-- OrderHistoryTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:SeleniumFramework.tests.SubmitOrderTest@2d52216b]" started-at="2023-04-11T17:59:16 CEST" name="tearDown" finished-at="2023-04-11T17:59:16 CEST" duration-ms="123" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- SeleniumFramework.tests.ErrorValidations -->
+      </class> <!-- SeleniumFramework.tests.SubmitOrderTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

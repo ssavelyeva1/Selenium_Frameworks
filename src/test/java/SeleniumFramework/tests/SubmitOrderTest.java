@@ -10,14 +10,16 @@ import org.testng.annotations.Test;
 import SeleniumFramework.pageobjects.CartPage;
 import SeleniumFramework.pageobjects.CheckoutPage;
 import SeleniumFramework.pageobjects.ConfirmationPage;
+import SeleniumFramework.pageobjects.OrderPage;
 import SeleniumFramework.pageobjects.ProductCatalog;
 import SeleniumFrameworkDesign.testcomponents.BaseTest;
 
 public class SubmitOrderTest extends BaseTest {
 
+	String productName = "ZARA COAT 3";
+
 	@Test
-	public void submitOrder() throws IOException {
-		String productName = "ZARA COAT 3";
+	public void SubmitOrder() throws IOException {
 
 		// logging to the web site
 		ProductCatalog productCatalog = landingPage.loginApplication("savelyeva1.20@gmail.com", "Abc_12345");
@@ -39,6 +41,15 @@ public class SubmitOrderTest extends BaseTest {
 		// asserting confirmation message
 		String confirmMessage = confirmationPage.getConfirmationMessage();
 		Assert.assertTrue(confirmMessage.equalsIgnoreCase("THANKYOU FOR THE ORDER."));
+	}
+
+	// this test is dependent on successful run of submitOrder test
+	@Test(dependsOnMethods = { "SubmitOrder" })
+	public void OrderHistoryTest() {
+		ProductCatalog productCatalog = landingPage.loginApplication("savelyeva1.20@gmail.com", "Abc_12345");
+		OrderPage ordersPage = productCatalog.goToOrdersPage();
+		
+		Assert.assertTrue(ordersPage.verifyOrderDisplay(productName));
 	}
 
 }
