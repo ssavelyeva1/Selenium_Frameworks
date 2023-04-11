@@ -30,11 +30,7 @@ public class LandingPage extends AbstractComponent {
 	
 	@FindBy(id = "login")
 	WebElement submit;
-	
-	public void goTo(String url) {
-		driver.get(url);
-	}
-	
+		
 	public ProductCatalog loginApplication(String email, String psswd) {
 		userEmail.sendKeys(email);
 		password.sendKeys(psswd);
@@ -42,6 +38,10 @@ public class LandingPage extends AbstractComponent {
 		
 		ProductCatalog productCatalog = new ProductCatalog(driver);
 		return productCatalog;
+	}
+	
+	public void goTo() {
+		driver.get("https://rahulshettyacademy.com/client");
 	}
 
 }

@@ -1,5 +1,6 @@
-package SeleniumFramework;
+package SeleniumFramework.tests;
 
+import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
 
@@ -11,28 +12,24 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.Test;
 
 import SeleniumFramework.pageobjects.CartPage;
 import SeleniumFramework.pageobjects.CheckoutPage;
 import SeleniumFramework.pageobjects.ConfirmationPage;
 import SeleniumFramework.pageobjects.LandingPage;
 import SeleniumFramework.pageobjects.ProductCatalog;
+import SeleniumFrameworkDesign.testcomponents.BaseTest;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class SubmitOrderTest {
+public class SubmitOrderTest extends BaseTest {
 
-	public static void main(String[] args) {
-
+	@Test
+	public void submitOrder() throws IOException {
 		String productName = "ZARA COAT 3";
 
-		WebDriverManager.chromedriver().setup();
-		WebDriver driver = new ChromeDriver();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-		driver.manage().window().maximize();
+		LandingPage landingPage = launchApplication();
 
-		// logging to the web site
-		LandingPage landingPage = new LandingPage(driver);
-		landingPage.goTo("https://rahulshettyacademy.com/client");
 		ProductCatalog productCatalog = landingPage.loginApplication("savelyeva1.20@gmail.com", "Abc_12345");
 
 		// finding and adding product to the cart
