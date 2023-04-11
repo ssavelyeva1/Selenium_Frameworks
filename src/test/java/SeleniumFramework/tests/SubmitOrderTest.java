@@ -1,26 +1,17 @@
 package SeleniumFramework.tests;
 
 import java.io.IOException;
-import java.time.Duration;
 import java.util.List;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import SeleniumFramework.pageobjects.CartPage;
 import SeleniumFramework.pageobjects.CheckoutPage;
 import SeleniumFramework.pageobjects.ConfirmationPage;
-import SeleniumFramework.pageobjects.LandingPage;
 import SeleniumFramework.pageobjects.ProductCatalog;
 import SeleniumFrameworkDesign.testcomponents.BaseTest;
-import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class SubmitOrderTest extends BaseTest {
 

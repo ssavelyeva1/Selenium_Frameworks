@@ -2,16 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-04-11T13:01:27 CEST" name="Default suite" finished-at="2023-04-11T13:01:52 CEST" duration-ms="25646">
+  <suite started-at="2023-04-11T16:03:20 CEST" name="Default suite" finished-at="2023-04-11T16:03:29 CEST" duration-ms="8831">
     <groups>
     </groups>
-    <test started-at="2023-04-11T13:01:27 CEST" name="Default test" finished-at="2023-04-11T13:01:52 CEST" duration-ms="25646">
-      <class name="SeleniumFramework.tests.SubmitOrderTest">
-        <test-method signature="submitOrder()[pri:0, instance:SeleniumFramework.tests.SubmitOrderTest@29215f06]" started-at="2023-04-11T13:01:27 CEST" name="submitOrder" finished-at="2023-04-11T13:01:52 CEST" duration-ms="25579" status="PASS">
+    <test started-at="2023-04-11T16:03:20 CEST" name="Default test" finished-at="2023-04-11T16:03:29 CEST" duration-ms="8831">
+      <class name="SeleniumFramework.tests.ErrorValidations">
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:SeleniumFramework.tests.ErrorValidations@272113c4]" started-at="2023-04-11T16:03:20 CEST" name="launchApplication" finished-at="2023-04-11T16:03:28 CEST" duration-ms="8103" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="submitOrder()[pri:0, instance:SeleniumFramework.tests.ErrorValidations@272113c4]" started-at="2023-04-11T16:03:28 CEST" name="submitOrder" finished-at="2023-04-11T16:03:29 CEST" duration-ms="536" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- submitOrder -->
-      </class> <!-- SeleniumFramework.tests.SubmitOrderTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:SeleniumFramework.tests.ErrorValidations@272113c4]" started-at="2023-04-11T16:03:29 CEST" name="tearDown" finished-at="2023-04-11T16:03:29 CEST" duration-ms="130" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- SeleniumFramework.tests.ErrorValidations -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

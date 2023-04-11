@@ -15,7 +15,7 @@ public class LandingPage extends AbstractComponent {
 	public LandingPage(WebDriver driver) {
 		// sending driver form child to AbstractComponent class
 		super(driver);
-		
+
 		// passing driver from StandaloneTest class to LandingPage class
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
@@ -24,22 +24,30 @@ public class LandingPage extends AbstractComponent {
 	// PageFactory
 	@FindBy(id = "userEmail")
 	WebElement userEmail;
-	
+
 	@FindBy(id = "userPassword")
 	WebElement password;
-	
+
 	@FindBy(id = "login")
 	WebElement submit;
-		
+
+	@FindBy(css = "[class*='flyInOut']")
+	WebElement errorMessage;
+
 	public ProductCatalog loginApplication(String email, String psswd) {
 		userEmail.sendKeys(email);
 		password.sendKeys(psswd);
 		submit.click();
-		
+
 		ProductCatalog productCatalog = new ProductCatalog(driver);
 		return productCatalog;
 	}
-	
+
+	public String getErrorMessage() {
+		waitForWebElementToAppear(errorMessage);
+		return errorMessage.getText();
+	}
+
 	public void goTo() {
 		driver.get("https://rahulshettyacademy.com/client");
 	}
