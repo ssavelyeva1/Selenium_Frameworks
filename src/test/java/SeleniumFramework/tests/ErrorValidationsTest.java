@@ -13,7 +13,7 @@ import SeleniumFramework.pageobjects.ConfirmationPage;
 import SeleniumFramework.pageobjects.ProductCatalog;
 import SeleniumFrameworkDesign.testcomponents.BaseTest;
 
-public class ErrorValidations extends BaseTest {
+public class ErrorValidationsTest extends BaseTest {
 
 	@Test
 	public void LoginErrorValidation() throws IOException {
