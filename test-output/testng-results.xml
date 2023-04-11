@@ -1,37 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="3" total="4" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-04-11T17:58:42 CEST" name="Default suite" finished-at="2023-04-11T17:59:16 CEST" duration-ms="33933">
+  <suite started-at="2023-04-11T18:18:05 CEST" name="Suite" finished-at="2023-04-11T18:18:05 CEST" duration-ms="153">
     <groups>
+      <group name="ErrorHandling">
+        <method signature="ErrorValidationsTest.LoginErrorValidation()[pri:0, instance:SeleniumFramework.tests.ErrorValidationsTest@117159c0]" name="LoginErrorValidation" class="SeleniumFramework.tests.ErrorValidationsTest"/>
+      </group> <!-- ErrorHandling -->
     </groups>
-    <test started-at="2023-04-11T17:58:42 CEST" name="Default test" finished-at="2023-04-11T17:59:16 CEST" duration-ms="33933">
-      <class name="SeleniumFramework.tests.SubmitOrderTest">
-        <test-method is-config="true" signature="launchApplication()[pri:0, instance:SeleniumFramework.tests.SubmitOrderTest@2d52216b]" started-at="2023-04-11T17:58:42 CEST" name="launchApplication" finished-at="2023-04-11T17:58:50 CEST" duration-ms="8059" status="PASS">
+    <test started-at="2023-04-11T18:18:05 CEST" name="Submit Order Test" finished-at="2023-04-11T18:18:05 CEST" duration-ms="21">
+    </test> <!-- Submit Order Test -->
+    <test started-at="2023-04-11T18:18:05 CEST" name="Error Validations Test" finished-at="2023-04-11T18:18:05 CEST" duration-ms="153">
+      <class name="SeleniumFramework.tests.ErrorValidationsTest">
+        <test-method signature="LoginErrorValidation()[pri:0, instance:SeleniumFramework.tests.ErrorValidationsTest@117159c0]" started-at="2023-04-11T18:18:05 CEST" name="LoginErrorValidation" finished-at="2023-04-11T18:18:05 CEST" duration-ms="31" status="FAIL">
+          <exception class="java.lang.NullPointerException">
+            <message>
+              <![CDATA[Cannot invoke "SeleniumFramework.pageobjects.LandingPage.loginApplication(String, String)" because "this.landingPage" is null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "SeleniumFramework.pageobjects.LandingPage.loginApplication(String, String)" because "this.landingPage" is null
+at SeleniumFramework.tests.ErrorValidationsTest.LoginErrorValidation(ErrorValidationsTest.java:21)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:829)
+at org.testng.TestRunner.run(TestRunner.java:602)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:475)
+at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:58)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+at java.base/java.lang.Thread.run(Thread.java:833)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- launchApplication -->
-        <test-method signature="SubmitOrder()[pri:0, instance:SeleniumFramework.tests.SubmitOrderTest@2d52216b]" started-at="2023-04-11T17:58:50 CEST" name="SubmitOrder" finished-at="2023-04-11T17:59:07 CEST" duration-ms="17574" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- SubmitOrder -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:SeleniumFramework.tests.SubmitOrderTest@2d52216b]" started-at="2023-04-11T17:59:07 CEST" name="tearDown" finished-at="2023-04-11T17:59:08 CEST" duration-ms="251" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="launchApplication()[pri:0, instance:SeleniumFramework.tests.SubmitOrderTest@2d52216b]" started-at="2023-04-11T17:59:08 CEST" name="launchApplication" finished-at="2023-04-11T17:59:15 CEST" duration-ms="6892" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- launchApplication -->
-        <test-method signature="OrderHistoryTest()[pri:0, instance:SeleniumFramework.tests.SubmitOrderTest@2d52216b]" started-at="2023-04-11T17:59:15 CEST" name="OrderHistoryTest" finished-at="2023-04-11T17:59:16 CEST" depends-on-methods="SeleniumFramework.tests.SubmitOrderTest.SubmitOrder" duration-ms="960" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- OrderHistoryTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:SeleniumFramework.tests.SubmitOrderTest@2d52216b]" started-at="2023-04-11T17:59:16 CEST" name="tearDown" finished-at="2023-04-11T17:59:16 CEST" duration-ms="123" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- SeleniumFramework.tests.SubmitOrderTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+        </test-method> <!-- LoginErrorValidation -->
+      </class> <!-- SeleniumFramework.tests.ErrorValidationsTest -->
+    </test> <!-- Error Validations Test -->
+  </suite> <!-- Suite -->
 </testng-results>

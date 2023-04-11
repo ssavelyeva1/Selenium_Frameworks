@@ -15,7 +15,7 @@ import SeleniumFrameworkDesign.testcomponents.BaseTest;
 
 public class ErrorValidationsTest extends BaseTest {
 
-	@Test
+	@Test(groups = { "ErrorHandling" })
 	public void LoginErrorValidation() throws IOException {
 		// logging to the web site with wrong credentials
 		landingPage.loginApplication("invanova1.20@gmail.com", "Def_6789");
