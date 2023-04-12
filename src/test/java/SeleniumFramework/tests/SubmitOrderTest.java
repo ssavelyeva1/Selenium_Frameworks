@@ -1,6 +1,7 @@
 package SeleniumFramework.tests;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
 
 import org.openqa.selenium.WebElement;
@@ -20,18 +21,18 @@ public class SubmitOrderTest extends BaseTest {
 	String productName = "ZARA COAT 3";
 
 	@Test(dataProvider = "getData", groups = { "Purchase" })
-	public void SubmitOrder(String email, String psswd, String productName) throws IOException {
+	public void SubmitOrder(HashMap<String, String> input) throws IOException {
 
 		// logging to the web site
-		ProductCatalog productCatalog = landingPage.loginApplication(email, psswd);
+		ProductCatalog productCatalog = landingPage.loginApplication(input.get("email"), input.get("psswd"));
 
 		// finding and adding product to the cart
 		List<WebElement> products = productCatalog.getProductList();
-		productCatalog.addProductToCart(productName);
+		productCatalog.addProductToCart(input.get("productName"));
 		CartPage cartPage = productCatalog.goToCartPage();
 
 		// making sure the item was added to the cart and going to the checkout
-		Boolean match = cartPage.verifyProductDisplay(productName);
+		Boolean match = cartPage.verifyProductDisplay(input.get("productName"));
 		Assert.assertTrue(match);
 		CheckoutPage checkoutPage = cartPage.goToCheckout();
 
@@ -55,8 +56,17 @@ public class SubmitOrderTest extends BaseTest {
 
 	@DataProvider
 	public Object[][] getData() {
-		return new Object[][] { { "savelyeva1.20@gmail.com", "Abc_12345", "ZARA COAT 3" },
-				{ "savelyeva1.20@gmail.com", "Abc_12345", "ADIDAS ORIGINAL" } };
+		HashMap<String, String> map1 = new HashMap<String, String>();
+		map1.put("email", "savelyeva1.20@gmail.com");
+		map1.put("psswd", "Abc_12345");
+		map1.put("productName", "ZARA COAT 3");
+
+		HashMap<String, String> map2 = new HashMap<String, String>();
+		map2.put("email", "savelyeva1.20@gmail.com");
+		map2.put("psswd", "Abc_12345");
+		map2.put("productName", "ADIDAS ORIGINAL");
+
+		return new Object[][] { { map1 }, { map2 } };
 	}
 
 }
