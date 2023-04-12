@@ -55,18 +55,23 @@ public class SubmitOrderTest extends BaseTest {
 	}
 
 	@DataProvider
-	public Object[][] getData() {
-		HashMap<String, String> map1 = new HashMap<String, String>();
-		map1.put("email", "savelyeva1.20@gmail.com");
-		map1.put("psswd", "Abc_12345");
-		map1.put("productName", "ZARA COAT 3");
+	public Object[][] getData() throws IOException {
+		List<HashMap<String, String>> data = getJsonDataToMap(System.getProperty("user.dir")
+				+ "//src//test//java//SeleniumFrameworkDesign//data//PurchaseOrder.json");
 
-		HashMap<String, String> map2 = new HashMap<String, String>();
-		map2.put("email", "savelyeva1.20@gmail.com");
-		map2.put("psswd", "Abc_12345");
-		map2.put("productName", "ADIDAS ORIGINAL");
-
-		return new Object[][] { { map1 }, { map2 } };
+		return new Object[][] { { data.get(0) }, { data.get(1)} };
 	}
+
+	/*
+	 * @DataProvider public Object[][] getData() { HashMap<String, String> map1 =
+	 * new HashMap<String, String>(); map1.put("email", "savelyeva1.20@gmail.com");
+	 * map1.put("psswd", "Abc_12345"); map1.put("productName", "ZARA COAT 3");
+	 * 
+	 * HashMap<String, String> map2 = new HashMap<String, String>();
+	 * map2.put("email", "savelyeva1.20@gmail.com"); map2.put("psswd", "Abc_12345");
+	 * map2.put("productName", "ADIDAS ORIGINAL");
+	 * 
+	 * return new Object[][] { { map1 }, { map2 } }; }
+	 */
 
 }
