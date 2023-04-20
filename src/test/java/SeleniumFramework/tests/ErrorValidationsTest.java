@@ -8,14 +8,13 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import SeleniumFramework.pageobjects.CartPage;
-import SeleniumFramework.pageobjects.CheckoutPage;
-import SeleniumFramework.pageobjects.ConfirmationPage;
 import SeleniumFramework.pageobjects.ProductCatalog;
 import SeleniumFrameworkDesign.testcomponents.BaseTest;
+import SeleniumFrameworkDesign.testcomponents.Retry;
 
 public class ErrorValidationsTest extends BaseTest {
 
-	@Test(groups = { "ErrorHandling" })
+	@Test(groups = { "ErrorHandling" }, retryAnalyzer = Retry.class)
 	public void LoginErrorValidation() throws IOException {
 		// logging to the web site with wrong credentials
 		landingPage.loginApplication("invanova1.20@gmail.com", "Def_6789");
