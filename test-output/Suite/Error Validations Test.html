@@ -55,13 +55,13 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Error Validations Test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>1/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Tue Apr 11 18:18:05 CEST 2023</td>
+<td>Started on:</td><td>Thu Apr 20 15:41:41 CEST 2023</td>
 </tr>
-<tr><td>Total time:</td><td>0 seconds (153 ms)</td>
+<tr><td>Total time:</td><td>31 seconds (31328 ms)</td>
 </tr><tr>
-<td>Included groups:</td><td>ErrorHandling </td>
+<td>Included groups:</td><td></td>
 </tr><tr>
 <td>Excluded groups:</td><td></td>
 </tr>
@@ -77,16 +77,22 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='SeleniumFramework.tests.ErrorValidationsTest.LoginErrorValidation()'><b>LoginErrorValidation</b><br>Test class: SeleniumFramework.tests.ErrorValidationsTest</td>
-<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;SeleniumFramework.pageobjects.LandingPage.loginApplication(String, String)&quot; because &quot;this.landingPage&quot; is null
-	at SeleniumFramework.tests.ErrorValidationsTest.LoginErrorValidation(ErrorValidationsTest.java:21)
+<td><div><pre>java.lang.AssertionError: expected [Incorrect email or password.] but found [Incorrect email password.]
+	at SeleniumFramework.tests.ErrorValidationsTest.LoginErrorValidation(ErrorValidationsTest.java:23)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
 	at java.base/java.lang.Thread.run(Thread.java:833)
-... Removed 17 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1897446631", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1897446631'><pre>java.lang.NullPointerException: Cannot invoke &quot;SeleniumFramework.pageobjects.LandingPage.loginApplication(String, String)&quot; because &quot;this.landingPage&quot; is null
-	at SeleniumFramework.tests.ErrorValidationsTest.LoginErrorValidation(ErrorValidationsTest.java:21)
+... Removed 23 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1035256664", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1035256664'><pre>java.lang.AssertionError: expected [Incorrect email or password.] but found [Incorrect email password.]
+	at org.testng.Assert.fail(Assert.java:110)
+	at org.testng.Assert.failNotEquals(Assert.java:1577)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:149)
+	at org.testng.Assert.assertEquals(Assert.java:131)
+	at org.testng.Assert.assertEquals(Assert.java:655)
+	at org.testng.Assert.assertEquals(Assert.java:665)
+	at SeleniumFramework.tests.ErrorValidationsTest.LoginErrorValidation(ErrorValidationsTest.java:23)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -111,7 +117,21 @@ function toggleAllBoxes() {
 	at java.base/java.lang.Thread.run(Thread.java:833)
 </pre></div></td>
 <td>0</td>
-<td>SeleniumFramework.tests.ErrorValidationsTest@117159c0</td></tr>
+<td>SeleniumFramework.tests.ErrorValidationsTest@3a0baae5</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='SeleniumFramework.tests.ErrorValidationsTest.ProductErrorValifation()'><b>ProductErrorValifation</b><br>Test class: SeleniumFramework.tests.ErrorValidationsTest</td>
+<td></td>
+<td>14</td>
+<td>SeleniumFramework.tests.ErrorValidationsTest@3a0baae5</td></tr>
 </table><p>
 </body>
 </html>
