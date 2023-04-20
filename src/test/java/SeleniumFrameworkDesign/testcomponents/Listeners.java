@@ -17,20 +17,22 @@ public class Listeners extends BaseTest implements ITestListener {
 
 	ExtentReports extent = ExtentReporterNG.getReportObject();
 	ExtentTest test;
+	ThreadLocal<ExtentTest> extentTest = new ThreadLocal<ExtentTest>();
 
 	@Override
 	public void onTestStart(ITestResult result) {
 		test = extent.createTest(result.getMethod().getMethodName());
+		extentTest.set(test); // assigning unique thread id
 	}
 
 	@Override
 	public void onTestSuccess(ITestResult result) {
-		test.log(Status.PASS, "Test passed");
+		extentTest.get().log(Status.PASS, "Test passed");
 	}
 
 	@Override
 	public void onTestFailure(ITestResult result) {
-		test.fail(result.getThrowable());
+		extentTest.get().fail(result.getThrowable());
 
 		try {
 			// getting the driver used in the test case
