@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Properties;
 
 import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -50,6 +51,7 @@ public class BaseTest {
 				options.addArguments("headless");
 			}
 			driver = new ChromeDriver(options);
+			driver.manage().window().setSize(new Dimension(1440, 900)); // full screen in headless mode
 		} else if (browserName.equalsIgnoreCase("firefox")) {
 			System.setProperty("webdriver.gecko.driver",
 					"E:\\learning\\Selenium WebDriver course\\Webdriver\\geckodriver-v0.32.2-win32\\geckodriver.exe");
