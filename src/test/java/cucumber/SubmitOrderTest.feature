@@ -7,8 +7,8 @@ Feature: Purchase the order from E-commerce Website
 
   @tag2
   Scenario Outline: Positive test of submitting the order
-    Given Logged in with username <email> and <password>
-    When I add product <productName> from cart
+    Given Logged in with username <email> and password <password>
+    When I add product <productName> to cart
     and checkout <productName> and submit the order
     Then "THANKYOU FOR THE ORDER." message is displayed on ConfirmationPage
 
