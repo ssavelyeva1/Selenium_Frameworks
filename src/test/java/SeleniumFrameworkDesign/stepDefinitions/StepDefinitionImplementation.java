@@ -22,6 +22,8 @@ public class StepDefinitionImplementation extends BaseTest{
 	public ProductCatalog productCatalog;
 	public ConfirmationPage confirmationPage;
 	
+	// can be auto-generated via Tidy Gherkin plugin
+	
 	@Given("I landed on E-commerce page")
 	public void i_landed_on_E_commerce_page() throws IOException {
 		landingPage = launchApplication();
