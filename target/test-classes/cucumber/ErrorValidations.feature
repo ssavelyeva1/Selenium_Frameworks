@@ -2,7 +2,7 @@
 Feature: Error validation
   I want to use this template for my feature file
 
-  @tag2
+  @ErrorValidation
   Scenario Outline: Title of your scenario outline
     Given I landed on E-commerce page
     When Logged in with username <email> and password <password>
